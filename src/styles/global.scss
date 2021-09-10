@@ -1,0 +1,40 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --background:#E9EAEC;
+   --header-background:#90ADC6;
+   --line-color: #333652;
+
+   --bug: #89960B;
+   --fairy: #DA93DD;
+   --ghost: #AD6EEC;
+   --normal: #C3C0B8;
+   --steel: #8F8E9E;
+   --ice: #9BDEFB;
+   --dark:#322C26;
+   --fighting: #80311D;
+   --grass: #68BB2B;
+   --poison: #924694;
+   --water: #5CC1ED;
+   --flying: #5D74D5;
+   --dragon: #6B57D2;
+   --fire:#EC5D35;
+   --ground: #D0B155;
+   --psychic: #DA3063;
+   --electric: #F4CB38;
+   --rock: #9D853C;
+}
+
+html {
+   @media (max-width: 1080px) {
+      font-size: 93.75%;
+   }
+  
+   @media (max-width: 720px) {
+      font-size: 87.5%;
+   }
+}
