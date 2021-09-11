@@ -1,0 +1,15 @@
+.circle {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 1.4rem;
+   height: 1.4rem;
+   shape-outside: circle();
+   clip-path: circle();
+   background: var(--header-background);
+
+   & > span {
+      font-size: 0.643rem;
+      color: #FFFFFF;
+   }
+}
