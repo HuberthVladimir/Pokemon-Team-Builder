@@ -1,8 +1,12 @@
 import './styles/global.scss'
+import { TeamInput } from './components/molecules/teamInput'
+import { UseAppProvider } from './services/context'
 
 function App() {
   return (
-    <div>t</div>
+    <UseAppProvider>
+      <TeamInput />
+    </UseAppProvider>
   );
 }
 
