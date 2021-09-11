@@ -2,4 +2,8 @@
    padding: 1.428rem;
    display: flex;
    flex-direction: column;
+
+   & > .configButtons {
+      align-self: flex-end;
+   }
 }
