@@ -38,3 +38,35 @@ html {
       font-size: 87.5%;
    }
 }
+
+#root {
+   background: var(--background);
+   width: 100vw;
+   height: 100vh;
+}
+
+h1, h3, p {
+   font-family: 'Spartan', sans-serif;
+}
+
+h1, h3 {
+   font-weight: 800;
+}
+
+h1 {
+   font-size: 1.125rem;
+   color: White;
+}
+
+h3, p {
+   color:#333652;
+}
+
+h3 {
+   font-size: 0.813rem;
+}
+
+p {
+   font-weight: 700;
+   font-size: 0.625rem;
+}
