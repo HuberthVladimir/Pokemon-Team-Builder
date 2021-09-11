@@ -4,7 +4,7 @@ const UseAppGlobalContext = createContext({})
 
 export const UseAppProvider = ({ children }) => {
    const [isInputTeamActive, setIsInputTeamActive] = useState(false)
-   const [inputText, setInputText] = useState('')
+   const [inputText, setInputText] = useState('My team')
 
    return (
       <UseAppGlobalContext.Provider
