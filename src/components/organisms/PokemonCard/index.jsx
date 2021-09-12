@@ -5,13 +5,13 @@ import { Pokemon } from '../../atoms/pokemon'
 import { PokemonName } from '../../atoms/pokemonName'
 import { BoxTypeColor } from '../../molecules/boxTypeColor'
 
-export const PokemonCard = (prosp) => {
+export const PokemonCard = ({ id, image, name, firstType, secondType }) => {
    return (
       <div className="pokemonCard">
-         <Circle>1</Circle>
-         <Pokemon image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" />
-         <PokemonName>Bulbasaur</PokemonName>
-         <BoxTypeColor firstType="grass" secondType="poison" />
+         <Circle>{id}</Circle>
+         <Pokemon image={image} />
+         <PokemonName>{name}</PokemonName>
+         <BoxTypeColor firstType={firstType} secondType={secondType} />
       </div>
    )
 }
