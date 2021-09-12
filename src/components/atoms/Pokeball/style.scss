@@ -3,7 +3,6 @@
    position: relative;
    flex-direction: column;
    gap: 0.4rem;
-   overflow: none;
 
    .topPokeball, .bottomPokeball {
       width: 4.88rem;
@@ -20,6 +19,78 @@
       position: absolute;
       top: -1rem;
       left: -1rem;
+   }
+
+   .topPokeball.bug {
+      background-color: var(--bug);
+   }
+   
+   .topPokeball.fairy {
+      background-color: var(--fairy);
+   }
+   
+   .topPokeball.ghost {
+      background-color: var(--ghost);
+   }
+   
+   .topPokeball.normal {
+      background-color: var(--normal);
+   }
+   
+   .topPokeball.steel {
+      background-color: var(--steel);
+   }
+   
+   .topPokeball.ice {
+      background-color: var(--ice);
+   }
+   
+   .topPokeball.dark {
+      background-color: var(--dark);
+   }
+   
+   .topPokeball.fighting {
+      background-color: var(--fighting);
+   }
+   
+   .topPokeball.grass {
+      background-color: var(--grass);
+   }
+   
+   .topPokeball.poison {
+      background-color: var(--poison);
+   }
+   
+   .topPokeball.water {
+      background-color: var(--water);
+   }
+   
+   .topPokeball.flying {
+      background-color: var(--flying);
+   }
+   
+   .topPokeball.dragon {
+      background-color: var(--dragon);
+   }
+   
+   .topPokeball.fire {
+      background-color: var(--fire);
+   }
+   
+   .topPokeball.ground {
+      background-color: var(--ground);
+   }
+   
+   .topPokeball.psychic {
+      background-color: var(--psychic);
+   }
+   
+   .topPokeball.electric {
+      background-color: var(--electric);
+   }
+   
+   .topPokeball.rock {
+      background-color: var(--rock);
    }
 }
 

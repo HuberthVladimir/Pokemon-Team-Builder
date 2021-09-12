@@ -1,27 +1,27 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { Circle } from '../../atoms/circle'
 import { Pokemon } from '../../atoms/pokemon'
 import { PokemonName } from '../../atoms/pokemonName'
 import { BoxTypeColor } from '../../molecules/boxTypeColor'
-import UseAppGlobalContext from '../../../services/context'
+import { useAppProvider } from '../../../services/context'
 
 import Confirmation from '../../../assets/Confirm.svg'
 
 export const PokemonCard = ({ id, image, name, firstType, secondType }) => {
-   const { savedPokemons } = useContext(UseAppGlobalContext)
+   const { savedPokemons, setSavedPokemons } = useAppProvider()
    const [isSelected, setIsSelected] = useState(false)
 
    const handleCardClick = () => {
-      const alreadyExist = savedPokemons.map(data => data.name.includes(name))
-      const objPokemon = { id, name, firstType }
+      const [alreadyExist] = savedPokemons.filter(data => data.name.includes(name))
+      const objPokemon = { id, name, image, firstType }
 
-      if (alreadyExist.includes(true)) {
+      if (alreadyExist) {
          alert('You arealdy take that pokemon')
       } else if (savedPokemons.length >= 6) {
          alert(`You party it's alrady full`)
       } else {
-         savedPokemons.push(objPokemon)
+         setSavedPokemons(prop => [...prop, objPokemon])
          if (!isSelected) {
             setIsSelected(true)
          }

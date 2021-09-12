@@ -1,12 +1,12 @@
 import './styles/global.scss'
 import Routes from './Routes'
-import { UseAppProvider } from './services/context'
+import { AppProvider } from './services/context'
 
 function App() {
   return (
-    <UseAppProvider>
+    <AppProvider>
       <Routes />
-    </UseAppProvider>
+    </AppProvider>
   );
 }
 

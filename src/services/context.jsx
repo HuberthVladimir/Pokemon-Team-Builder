@@ -1,8 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+
 
 const UseAppGlobalContext = createContext({})
 
-export const UseAppProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
    const [isInputTeamActive, setIsInputTeamActive] = useState(false)
    const [inputText, setInputText] = useState('My team')
    const [savedPokemons, setSavedPokemons] = useState([])
@@ -18,5 +19,7 @@ export const UseAppProvider = ({ children }) => {
       </UseAppGlobalContext.Provider>
    )
 }
-
+export function useAppProvider() {
+   return useContext(UseAppGlobalContext)
+}
 export default UseAppGlobalContext
