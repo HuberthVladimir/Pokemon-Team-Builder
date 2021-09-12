@@ -17,6 +17,7 @@ export const PokemonList = () => {
                image={savedPokemons[index]?.image}
                name={savedPokemons[index]?.name}
                type={savedPokemons[index]?.firstType}
+               id={savedPokemons[index]?.id}
             />
          })}
       </main>
