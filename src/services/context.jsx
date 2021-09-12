@@ -8,6 +8,9 @@ export const AppProvider = ({ children }) => {
    const [inputText, setInputText] = useState('My team')
    const [savedPokemons, setSavedPokemons] = useState([])
    const [isPokeballSelected, setIsPokeballSelected] = useState({ name: '', id: 0, isActived: false })
+   const [actualPokemonSelected, setActualPokemonSelected] = useState('')
+
+   React.useEffect(() => { console.log(actualPokemonSelected) }, [actualPokemonSelected])
 
    return (
       <UseAppGlobalContext.Provider
@@ -15,7 +18,8 @@ export const AppProvider = ({ children }) => {
             isInputTeamActive, setIsInputTeamActive,
             inputText, setInputText,
             savedPokemons, setSavedPokemons,
-            isPokeballSelected, setIsPokeballSelected
+            isPokeballSelected, setIsPokeballSelected,
+            actualPokemonSelected, setActualPokemonSelected
          }}>
          {children}
       </UseAppGlobalContext.Provider>

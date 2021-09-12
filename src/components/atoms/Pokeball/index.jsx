@@ -3,9 +3,13 @@ import './style.scss'
 import { useAppProvider } from '../../../services/context'
 
 export const Pokeball = (props) => {
-   const { isPokeballSelected, setIsPokeballSelected } = useAppProvider()
+   const { isPokeballSelected, setIsPokeballSelected, setActualPokemonSelected } = useAppProvider()
 
    const handlePokemonClick = () => {
+      if (props.name !== undefined) {
+         setActualPokemonSelected(props.name)
+      }
+      //&& savedPokemons <= 6
       //ao clicar no pokemon, e verificado se o pokemon clicado é igual ao anterior
       //caso seja verdadeiro, ele tera um toggle para se o pokemon foi selecionado ou n
       //caso o pokemon seja diferente do selecionado anteriormente é setado como verdadeiro(isActived)

@@ -4,13 +4,21 @@ import './style.scss'
 import { useAppProvider } from '../../../services/context'
 
 export const Delete = () => {
-   const { isPokeballSelected } = useAppProvider()
+   const { isPokeballSelected, savedPokemons, setSavedPokemons, actualPokemonSelected } = useAppProvider()
+
+   const handleDeleteClick = () => {
+      const positionPokemon = savedPokemons.filter(data => data.name !== actualPokemonSelected)
+      console.log(actualPokemonSelected)
+      setSavedPokemons(positionPokemon)
+   }
+
    return (
       <img
          className="delete"
          src={DeleteIcon}
          alt="delete icon"
-         style={{ filter: isPokeballSelected.isActived ? 'none' : 'saturate(20%)' }}
+         onClick={handleDeleteClick}
+         style={{ filter: isPokeballSelected.isActived ? (savedPokemons.length < 1 ? 'saturate(20%)' : 'none') : 'saturate(20%' }}
       />
    )
 }
