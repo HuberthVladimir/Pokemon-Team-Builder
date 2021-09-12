@@ -1,0 +1,16 @@
+.boxListPokemons {
+   display: flex;
+   flex-direction: column;
+   gap: 1.3rem;
+   padding: 0 1.428rem 3rem 1.428rem;
+
+   .listPokemons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem 0;
+   }
+
+   .endMessage {
+      margin: 0 auto;
+   }
+}

@@ -5,19 +5,20 @@
    align-items: center;
    max-width: 5.5rem;
    max-height: 4rem;
+   margin-left: 1rem;
 
    & > .circle {
       align-self: flex-start;
-      top: 5rem;
    }
 
    & > .pokemonImg {
       position: absolute;
+      top: 1.5rem;
       max-width: 6rem;
    }
 
    & > .pokemonName {
-      margin-top: 4.2rem;
+      margin-top: 4rem;
    }
 
    & > .typeColor {

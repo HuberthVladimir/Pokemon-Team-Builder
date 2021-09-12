@@ -2,13 +2,15 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 1.7rem;
-   height: 1.7rem;
    clip-path: circle();
    background: var(--header-background);
+   padding-top: 1rem;
 
    & > span {
-      font-size: 0.643rem;
+      text-align: center;
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.7rem;
       font-family: 'Poppins', sans-serif;
       color: #FFFFFF;
    }

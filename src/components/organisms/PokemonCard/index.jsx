@@ -10,7 +10,7 @@ export const PokemonCard = ({ id, image, name, firstType, secondType }) => {
       <div className="pokemonCard">
          <Circle>{id}</Circle>
          <Pokemon image={image} />
-         <PokemonName>{name}</PokemonName>
+         <PokemonName>{name.indexOf('-') > -1 ? name.substring(0, name.indexOf("-")) : name}</PokemonName>
          <BoxTypeColor firstType={firstType} secondType={secondType} />
       </div>
    )

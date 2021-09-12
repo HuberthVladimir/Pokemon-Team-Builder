@@ -10,7 +10,7 @@ import './style.scss'
 
 export const PokemonList = () => {
    const [dataPokemon, setDataPokemon] = useState([])
-   const [amountCards, SetAmountCards] = useState(12)
+   const [amountCards, SetAmountCards] = useState(0)
 
    //use effect que pegara os dados da api
    useEffect(() => {
@@ -22,18 +22,17 @@ export const PokemonList = () => {
             arrListPok.push(responseMap)
          }
          setDataPokemon(arrListPok)
-         console.log(dataPokemon)
       }
       getPokemonList()
 
-   }, [amountCards, dataPokemon])
+   }, [amountCards])
 
    //função que irá fazer o infinite scroll
    //fica ouvindo a div com id, e quando o usuario realiza o scrol ate ela, faz a requisição
    useEffect(() => {
       const intersectionObserver = new IntersectionObserver(entries => {
          if (entries.some(entry => entry.isIntersecting)) {
-            SetAmountCards((currentValue) => currentValue < 898 ? currentValue + 8 : currentValue + 0);
+            SetAmountCards((currentValue) => currentValue < 898 ? currentValue + 20 : currentValue + 0);
          }
       })
       intersectionObserver.observe(document.querySelector('#end-page'));
@@ -41,12 +40,13 @@ export const PokemonList = () => {
    }, [])
 
    return (
-      <>
+      <section className="boxListPokemons">
          <Title>Choose 6 pokémons:</Title>
-         <div class="listPokemons">
+         <main className="listPokemons">
             {dataPokemon.map((data) => {
                return (
                   <PokemonCard
+                     key={data.id}
                      id={data.id}
                      image={data.sprites['front_default']}
                      name={data.name}
@@ -55,9 +55,13 @@ export const PokemonList = () => {
                   />
                )
             })}
-         </div>
+         </main>
+         {amountCards >= 898 &&
+            <div className="endMessage">
+               Heeey! It looks like you are at the end of the list
+            </div>}
          <div id="end-page" />
-      </>
+      </section>
 
    )
 }
