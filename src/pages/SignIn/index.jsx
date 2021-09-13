@@ -21,6 +21,7 @@ export const SignIn = () => {
       e.preventDefault()
       try {
          const response = await apiBack.post('/user/auth', inputData)
+         console.log(response)
          apiBack.defaults.headers.common = { 'Authorization': 'Bearer ' + response.data.token.token };
          changeUser(response.data)
          history.push('/new-team')

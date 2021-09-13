@@ -20,7 +20,8 @@ export const SingUp = () => {
    const handleSubmit = async (e) => {
       e.preventDefault()
       try {
-         await apiBack.post('/user', inputData)
+         const { request } = await apiBack.post('/user', inputData)
+         console.log(request)
          setSucessSignUp(true)
          history.push('/')
       } catch (err) {
