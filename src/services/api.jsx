@@ -5,5 +5,5 @@ export const api = axios.create({
 })
 
 export const apiBack = axios.create({
-   baseURL: 'http://165.22.186.23:3344/'
+   baseURL: 'https://pokemon.tkb.app.br/'
 })
