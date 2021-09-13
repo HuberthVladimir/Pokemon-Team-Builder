@@ -24,7 +24,7 @@ export const SingUp = () => {
          setSucessSignUp(true)
          history.push('/')
       } catch (err) {
-         setErrorMessage(err.response.data.errors[0].message)
+         setErrorMessage("error cadastro")
       }
    }
 

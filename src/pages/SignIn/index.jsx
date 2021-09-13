@@ -21,12 +21,11 @@ export const SignIn = () => {
       e.preventDefault()
       try {
          const response = await apiBack.post('/user/auth', inputData)
-         console.log(response.data.token)
          apiBack.defaults.headers.common = { 'Authorization': 'Bearer ' + response.data.token.token };
          changeUser(response.data)
          history.push('/new-team')
       } catch (err) {
-         setErrorMessage(err.response.data.errors[0].message)
+         setErrorMessage("erro ao realizar login")
       }
    }
 
