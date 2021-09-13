@@ -12,12 +12,12 @@ Faça seu equipe pokemon
 
 ### Deploy
 
-You can acess [here](https://pokemon-team-builder-ashen.vercel.app/)
+Você pode acessar por aqui [here](https://pokemon-team-builder-ashen.vercel.app/)
 
 <hr>
 
-### 📦 Install
-After you clone this project yout can:
+### 📦 Instalação
+Depois de você clonar o projeto, você pode:
 <h3>NPM </h3>
 
 ```bash
@@ -33,7 +33,7 @@ yarn start
 ```
 <hr>
 
-### 🛠 Technologies
+### 🛠 Tecnologia
  
  - [Node.js](https://nodejs.org/en/)
  - [React](https://pt-br.reactjs.org/)
@@ -41,7 +41,7 @@ yarn start
 
 <hr>
 
-### 👨🏾‍💻 Author
+### 👨🏾‍💻 Autor
 <a href="https://github.com/HuberthVladimir">
  <img style="border-radius: 100px;" src="https://github.com/huberthvladimir.png" width="100px;" alt=""/>
  <br />
