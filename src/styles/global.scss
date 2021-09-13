@@ -48,6 +48,10 @@ body {
    background: var(--background);
 }
 
+button {
+   cursor: pointer;
+}
+
 h1, h3, p {
    font-family: 'Spartan', sans-serif;
 }
