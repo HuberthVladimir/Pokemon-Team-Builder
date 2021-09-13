@@ -1,15 +1,22 @@
 import React from 'react'
-import { Header } from '../../organisms/Header'
 import { useHistory } from 'react-router'
+import { Header } from '../../organisms/Header'
+import { MyTeamPokemons } from '../../organisms/Myteam'
 
-export const Myteams = () => {
+export const MyTeams = () => {
    const history = useHistory()
 
    const handleNewTeamRedirect = () => history.push('/')
 
    return (
       <>
-         <Header handleClick={handleNewTeamRedirect}>create new team</Header>
+         <Header
+            handleClick={handleNewTeamRedirect}>
+            create new team
+         </Header>
+
+         <MyTeamPokemons />
+         <MyTeamPokemons />
       </>
    )
 }

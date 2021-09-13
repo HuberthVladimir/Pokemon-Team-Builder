@@ -1,0 +1,11 @@
+.myTeamsPokemons {
+   display: flex;
+   flex-direction: column;
+   padding: 1.428rem 0 3rem 0;
+   margin: 0 2rem;
+   border-bottom: .2rem solid var(--line-color);
+
+   & > .title {
+      margin-left: -1rem;
+   }
+}
