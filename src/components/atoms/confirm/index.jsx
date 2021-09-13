@@ -2,13 +2,22 @@ import React from 'react'
 import ConfirmIcon from '../../../assets/Confirm.svg'
 import './style.scss'
 import { useAppProvider } from '../../../services/context'
-
+import { apiBack } from '../../../services/api'
 export const Confirm = () => {
-   const { savedPokemons, inputText } = useAppProvider()
+   const { savedPokemons, setSavedPokemons, inputText } = useAppProvider()
 
-   const handleSubmit = () => {
+   const handleSubmit = async () => {
       if (savedPokemons.length === 6) {
-         console.log(inputText, savedPokemons)
+         try {
+            const savedPokemonsFormated = savedPokemons.map(item => ({ type: item.firstType, name: item.name, image: item.image }))
+
+            await apiBack.post("/team", { name: inputText, pokemons: savedPokemonsFormated })
+            alert('Team Created With Sucess')
+            setSavedPokemons([])
+         } catch (err) {
+            console.log(err.response.data)
+         }
+
       }
    }
 

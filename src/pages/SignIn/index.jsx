@@ -6,7 +6,7 @@ import { useAppProvider } from '../../services/context'
 
 export const SignIn = () => {
    const [errorMessage, setErrorMessage] = useState('')
-   const { sucessSignUp } = useAppProvider()
+   const { sucessSignUp, changeUser } = useAppProvider()
    const history = useHistory()
    const [inputData, setInputData] = useState({
       email: '',
@@ -17,7 +17,9 @@ export const SignIn = () => {
       e.preventDefault()
       try {
          const response = await apiBack.post('/user/auth', inputData)
-         apiBack.defaults.headers.common = { 'Authorization': 'Bearer ' + response.data.token };
+         console.log(response.data.token)
+         apiBack.defaults.headers.common = { 'Authorization': 'Bearer ' + response.data.token.token };
+         changeUser(response.data)
          history.push('/new-team')
       } catch (err) {
          setErrorMessage(err.response.data.errors[0].message)

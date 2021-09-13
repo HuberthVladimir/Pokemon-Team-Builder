@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 
 const UseAppGlobalContext = createContext({})
@@ -11,13 +11,15 @@ export const AppProvider = ({ children }) => {
    const [actualPokemonSelected, setActualPokemonSelected] = useState('')
    const [sucessSignUp, setSucessSignUp] = useState(false)
 
-   useEffect(() => {
-      if (sucessSignUp) {
-         setTimeout(() => {
-            setSucessSignUp(false)
-         }, 3000)
-      }
-   }, [sucessSignUp])
+
+   const [user, setUser] = useState(JSON.parse(localStorage.getItem('@user')) || { token: '', user: null })
+
+
+   function changeUser(data) {
+      setUser(data)
+      localStorage.setItem('@user', JSON.stringify(data))
+   }
+
 
    return (
       <UseAppGlobalContext.Provider
@@ -27,7 +29,8 @@ export const AppProvider = ({ children }) => {
             savedPokemons, setSavedPokemons,
             isPokeballSelected, setIsPokeballSelected,
             actualPokemonSelected, setActualPokemonSelected,
-            sucessSignUp, setSucessSignUp
+            sucessSignUp, setSucessSignUp,
+            user, changeUser
          }}>
          {children}
       </UseAppGlobalContext.Provider>

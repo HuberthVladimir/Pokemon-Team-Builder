@@ -16,7 +16,6 @@ export const MyTeams = () => {
          </Header>
 
          <MyTeamPokemons />
-         <MyTeamPokemons />
       </>
    )
 }

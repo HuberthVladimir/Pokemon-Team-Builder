@@ -3,7 +3,6 @@
    flex-direction: column;
    padding: 1.428rem 0 3rem 0;
    margin: 0 2rem;
-   border-bottom: .2rem solid var(--line-color);
    
    @media (min-width: 598px) {
       margin: 2rem 14rem;
@@ -21,7 +20,22 @@
       margin: 2rem 30rem;
    }
 
+   & > .pokemonTeamBox {
+      display: flex;
+      flex-direction: column;
+   }
+   
+   .teamPokemonList {
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: .2rem solid var(--line-color);
+      display: grid;
+      gap: 1rem 0;
+      grid-template-columns: repeat(3, 1fr);
+   }
+
    & > .title {
       margin-left: -1rem;
    }
+   
 }
