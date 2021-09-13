@@ -10,8 +10,6 @@ export const AppProvider = ({ children }) => {
    const [isPokeballSelected, setIsPokeballSelected] = useState({ name: '', id: 0, isActived: false })
    const [actualPokemonSelected, setActualPokemonSelected] = useState('')
 
-   React.useEffect(() => { console.log(actualPokemonSelected) }, [actualPokemonSelected])
-
    return (
       <UseAppGlobalContext.Provider
          value={{

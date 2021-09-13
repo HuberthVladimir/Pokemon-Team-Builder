@@ -8,7 +8,6 @@ export const Delete = () => {
 
    const handleDeleteClick = () => {
       const positionPokemon = savedPokemons.filter(data => data.name !== actualPokemonSelected)
-      console.log(actualPokemonSelected)
       setSavedPokemons(positionPokemon)
    }
 
