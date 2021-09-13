@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 
 const UseAppGlobalContext = createContext({})
@@ -9,6 +9,15 @@ export const AppProvider = ({ children }) => {
    const [savedPokemons, setSavedPokemons] = useState([])
    const [isPokeballSelected, setIsPokeballSelected] = useState({ name: '', id: 0, isActived: false })
    const [actualPokemonSelected, setActualPokemonSelected] = useState('')
+   const [sucessSignUp, setSucessSignUp] = useState(false)
+
+   useEffect(() => {
+      if (sucessSignUp) {
+         setTimeout(() => {
+            setSucessSignUp(false)
+         }, 3000)
+      }
+   }, [sucessSignUp])
 
    return (
       <UseAppGlobalContext.Provider
@@ -17,7 +26,8 @@ export const AppProvider = ({ children }) => {
             inputText, setInputText,
             savedPokemons, setSavedPokemons,
             isPokeballSelected, setIsPokeballSelected,
-            actualPokemonSelected, setActualPokemonSelected
+            actualPokemonSelected, setActualPokemonSelected,
+            sucessSignUp, setSucessSignUp
          }}>
          {children}
       </UseAppGlobalContext.Provider>

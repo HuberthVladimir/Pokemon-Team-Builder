@@ -15,6 +15,13 @@
       font-family: 'Spartan', sans-serif;
       display: flex;
       flex-direction: column;
+
+      & > input {
+         min-width: 21.428rem; 
+         max-width: 21.428rem;
+         height: 1.8rem;
+         padding-left: .5rem;
+      }
    }
 
    .button {
@@ -28,15 +35,10 @@
       &:hover {
          filter: brightness(0.8);
       }
+   }
 
-      .sucessSignIn {
-         color: #4F8A10;
-         text-align: center;
-      }
-
-      .errorMessage {
-         color: #D8000C;
-         text-align: center;
-      }
+   .errorMessage {
+      color: #D8000C;
+      text-align: center;
    }
 }

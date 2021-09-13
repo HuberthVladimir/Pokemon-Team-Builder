@@ -1,36 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { apiBack } from '../../services/api'
 import './style.scss'
 import { useAppProvider } from '../../services/context'
 
-export const SignIn = () => {
-   const [errorMessage, setErrorMessage] = useState('')
-   const { sucessSignUp } = useAppProvider()
+export const SingUp = () => {
    const history = useHistory()
+   const { setSucessSignUp } = useAppProvider()
+   const [errorMessage, setErrorMessage] = useState('')
    const [inputData, setInputData] = useState({
+      name: '',
       email: '',
       password: ''
    })
 
+   useEffect(() => {
+      setErrorMessage('')
+   }, [])
+
    const handleSubmit = async (e) => {
       e.preventDefault()
       try {
-         const response = await apiBack.post('/user/auth', inputData)
-         apiBack.defaults.headers.common = { 'Authorization': 'Bearer ' + response.data.token };
-         history.push('/new-team')
+         await apiBack.post('/user', inputData)
+         setSucessSignUp(true)
+         history.push('/')
       } catch (err) {
          setErrorMessage(err.response.data.errors[0].message)
       }
    }
 
    const handleSingUpRedirect = () => {
-      history.push('/signup')
+      history.push('/')
    }
 
    return (
       <div id="signUpPage">
          <form onSubmit={(e) => handleSubmit(e)} className="boxSingIn">
+            <div className="boxInput">
+               <label htmlFor="name">Name:</label>
+               <input
+                  type="name"
+                  name="name"
+                  id="name"
+                  onChange={(e) => setInputData(prevState => ({ ...prevState, name: e.target.value }))}
+               />
+            </div>
             <div className="boxInput">
                <label htmlFor="email">Email:</label>
                <input
@@ -47,10 +61,9 @@ export const SignIn = () => {
                   name="password" id="password"
                   onChange={(e) => setInputData(prevState => ({ ...prevState, password: e.target.value }))} />
             </div>
-            {<p className="sucessSignIn">{sucessSignUp}</p>}
             {<p className="errorMessage">{errorMessage}</p>}
-            <button onClick={handleSingUpRedirect} className="button" type="button">Create Account</button>
-            <button className="button" type="submit">Login</button>
+            <button onClick={handleSingUpRedirect} className="button" type="button">Alerady has account</button>
+            <button className="button" type="submit">Create Account</button>
          </form>
       </div>
    )
