@@ -4,10 +4,23 @@
    gap: 1.3rem;
    padding: 0 1.428rem 3rem 1.428rem;
 
+   @media (min-width: 900px) {
+      padding: 0 10rem;
+   }
+
    .listPokemons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5rem 0;
+
+      @media (min-width: 598px) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (min-width: 850px) {
+         grid-template-columns: repeat(5, 1fr);
+         gap: 7rem 0;
+      }
    }
 
    .endMessage {

@@ -2,6 +2,22 @@
    padding: 1.428rem;
    display: flex;
    flex-direction: column;
+    
+   @media (min-width: 598px) {
+      padding: 2rem 14rem;
+   }
+
+   @media (min-width: 1200px) {
+      padding: 2rem 20rem;
+   }
+
+   @media (min-width: 1500px) {
+      padding: 2rem 25rem;
+   }
+
+   @media (min-width: 1800px) {
+      padding: 2rem 30rem;
+   }
 
    & > .configButtons {
       align-self: flex-end;
