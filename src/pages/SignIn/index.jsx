@@ -4,6 +4,8 @@ import { apiBack } from '../../services/api'
 import './style.scss'
 import { useAppProvider } from '../../services/context'
 
+//como estava proximo ao prazo de entrega não consegui refatorar para o atomic design
+
 export const SignIn = () => {
    const [errorMessage, setErrorMessage] = useState('')
    const { sucessSignUp, changeUser } = useAppProvider()
@@ -13,6 +15,8 @@ export const SignIn = () => {
       password: ''
    })
 
+
+   //realiza o cadastro
    const handleSubmit = async (e) => {
       e.preventDefault()
       try {
@@ -26,6 +30,7 @@ export const SignIn = () => {
       }
    }
 
+   //muda para a rota de cadasto
    const handleSingUpRedirect = () => {
       history.push('/signup')
    }

@@ -11,10 +11,10 @@ export const AppProvider = ({ children }) => {
    const [actualPokemonSelected, setActualPokemonSelected] = useState('')
    const [sucessSignUp, setSucessSignUp] = useState(false)
 
-
+   //pega o token da requisição no localstorage
    const [user, setUser] = useState(JSON.parse(localStorage.getItem('@user')) || { token: '', user: null })
 
-
+   //seta o token no localstorage
    function changeUser(data) {
       setUser(data)
       localStorage.setItem('@user', JSON.stringify(data))

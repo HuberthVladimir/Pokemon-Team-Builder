@@ -6,6 +6,8 @@ import { apiBack } from '../../../services/api'
 export const Confirm = () => {
    const { savedPokemons, setSavedPokemons, inputText } = useAppProvider()
 
+   //ao clicar no botão de enviar o time, é feita a verificação se os existe 6 pokemons
+   //os dados são formatados para o envio da requisição e enviado para a api
    const handleSubmit = async () => {
       if (savedPokemons.length === 6) {
          try {
@@ -15,7 +17,7 @@ export const Confirm = () => {
             alert('Team Created With Sucess')
             setSavedPokemons([])
          } catch (err) {
-            console.log(err.response.data)
+            alert(err.response.data)
          }
 
       }

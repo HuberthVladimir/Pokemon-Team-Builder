@@ -9,6 +9,7 @@ import './style.scss'
 export const MyTeamPokemons = () => {
    const [teamsPokemons, setTeamsPokemons] = useState([])
 
+   //pega os dados retornados da api e seta no estado
    useEffect(() => {
       const getMyPokemonsTeam = async () => {
          const { data } = await apiBack.get('/team')

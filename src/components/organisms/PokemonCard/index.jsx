@@ -12,6 +12,8 @@ export const PokemonCard = ({ id, image, name, firstType, secondType }) => {
    const { savedPokemons, setSavedPokemons } = useAppProvider()
    const [isSelected, setIsSelected] = useState(false)
 
+   //ao fazer a escolha do pokemon da equipe, é verificado se ele ja foi escolhido
+   // caso não, é adicionado
    const handleCardClick = () => {
       const [alreadyExist] = savedPokemons.filter(data => data.name.includes(name))
       const objPokemon = { id, name, image, firstType }

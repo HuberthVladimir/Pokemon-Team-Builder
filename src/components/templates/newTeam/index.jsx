@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 export const NewTeamTemplate = () => {
    const history = useHistory()
-
+   //muda a rota para a rota teams
    const handleTeams = () => history.push('/teams')
 
    return (

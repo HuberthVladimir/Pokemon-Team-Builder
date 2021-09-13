@@ -7,7 +7,6 @@ import { SingUp } from './pages/SingUp'
 
 import { Router as Route } from './PrivateRoutes'
 
-
 export default function Routes() {
    return (
       <BrowserRouter>

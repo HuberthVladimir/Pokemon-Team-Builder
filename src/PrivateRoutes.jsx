@@ -3,6 +3,8 @@ import { Route, Redirect } from 'react-router-dom'
 import { useAppProvider } from './services/context'
 import { apiBack } from './services/api'
 
+//declaração das rotas privadas, caso o token não esteja setado no localhost
+// retorna para a rota raiz
 const Router = ({ isPrivate = false, component: Component, ...rest }) => {
    const [isSigned, setIsSigned] = useState(false)
    const { user } = useAppProvider()

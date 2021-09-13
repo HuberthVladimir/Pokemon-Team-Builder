@@ -6,6 +6,7 @@ import { useAppProvider } from '../../../services/context'
 export const Delete = () => {
    const { isPokeballSelected, savedPokemons, setSavedPokemons, actualPokemonSelected } = useAppProvider()
 
+   //apaga o pokemon do array (retorna um novo array atualizado)   
    const handleDeleteClick = () => {
       const positionPokemon = savedPokemons.filter(data => data.name !== actualPokemonSelected)
       setSavedPokemons(positionPokemon)

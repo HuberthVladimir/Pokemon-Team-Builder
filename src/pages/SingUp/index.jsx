@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { apiBack } from '../../services/api'
 import './style.scss'
 import { useAppProvider } from '../../services/context'
+
+//como estava proximo ao prazo de entrega não consegui refatorar para o atomic design
 
 export const SingUp = () => {
    const history = useHistory()
@@ -14,10 +16,7 @@ export const SingUp = () => {
       password: ''
    })
 
-   useEffect(() => {
-      setErrorMessage('')
-   }, [])
-
+   //pega os dados do input e enviar para api na tentativa de realizar o cadastro
    const handleSubmit = async (e) => {
       e.preventDefault()
       try {
@@ -29,6 +28,7 @@ export const SingUp = () => {
       }
    }
 
+   //muda a rota para a rota raiz
    const handleSingUpRedirect = () => {
       history.push('/')
    }

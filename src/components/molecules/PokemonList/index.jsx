@@ -7,7 +7,7 @@ import './style.scss'
 export const PokemonList = () => {
    const { savedPokemons } = useAppProvider()
    const pokeballArr = [1, 2, 3, 4, 5, 6]
-
+   //logica para gerar as pokelas mesmo que não estejam setadas pelo usuario
    return (
       <main className="pokemonList">
          {pokeballArr.map((data, index) => {
